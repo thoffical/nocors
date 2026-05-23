@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>No CORS Browser</title>
+<title>CORS Browser</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -485,9 +485,9 @@ iframe#page-frame.visible { display: block; }
   <div id="info-panel" style="display:none;position:absolute;top:8px;right:8px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:16px;width:260px;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:20;font-size:13px;">
     <div style="font-weight:600;margin-bottom:10px;color:#202124;">📡 CORS Proxy Info</div>
     <div style="color:#5f6368;line-height:1.8;margin-bottom:10px;font-size:12px;">
-      Races <strong>8 proxies</strong> in parallel — fastest wins:<br>
+      Races <strong>7 proxies</strong> in parallel — fastest wins:<br>
       allorigins/raw · corsproxy.io<br>
-      codetabs · thingproxy · yacdn<br>
+      thingproxy · yacdn<br>
       cors.eu.org · proxy.cors.sh · garje
     </div>
     <div style="font-weight:600;margin-bottom:6px;color:#202124;">History</div>
@@ -503,7 +503,6 @@ iframe#page-frame.visible { display: block; }
 const PROXIES = [
   url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
   url => `https://corsproxy.io/?${encodeURIComponent(url)}`,
-  url => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
   url => `https://thingproxy.freeboard.io/fetch/${url}`,
   url => `https://yacdn.org/proxy/${url}`,
   url => `https://cors.eu.org/${url}`,
@@ -612,7 +611,7 @@ async function navigate(url) {
     });
 
     const proxyNames = [
-      'allorigins/raw', 'corsproxy.io', 'codetabs', 'thingproxy',
+      'allorigins/raw', 'corsproxy.io', 'thingproxy',
       'yacdn', 'cors.eu.org', 'proxy.cors.sh', 'garje'
     ];
 
@@ -856,3 +855,4 @@ document.querySelectorAll('.shortcut').forEach(el => {
 </script>
 </body>
 </html>
+
